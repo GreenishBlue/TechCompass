@@ -1,0 +1,64 @@
+body {
+    background-color: #f8f8f8;
+}
+
+.title {
+    float: left;
+    margin-left: -16px;
+}
+
+/* Navbar */
+.navbar {
+    float: right;
+}
+
+.navbar ul {
+    list-style: none;
+    margin: 0;
+}
+
+.navbar ul li {
+    float: left;
+    padding-left: 16px;
+}
+
+.navbar-link {
+    margin-top: 5px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0px 12px;
+}
+
+.title img {
+    height: 40px;
+}
+
+/* Header */
+.master-header {
+    padding: 32px 0 16px 0;
+}
+
+/* Filter bar */
+.filter-bar {
+    background-color: #fff;
+    padding: 12px 8px;
+    border-radius: 16px;
+}
+
+/* buddy cards */
+.buddies {
+    margin: 0; padding: 0;
+    list-style: none;
+}
+
+.buddies li {
+    float: left;
+}
+
+.buddies .mdl-card {
+    border-radius: 16px;
+    overflow: visible;
+}

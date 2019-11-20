@@ -1,4 +1,15 @@
+import os
 from flask import Flask, render_template
+
+from db import TCDatabaseSQLite
+from models import *
+
+
+DB_FILENAME = "tc.db"
+DB_PATH = os.path.join(os.path.dirname(os.path.realpath(__file__)), DB_FILENAME)
+
+
+db = TCDatabaseSQLite(DB_PATH)
 
 
 app = Flask(__name__)
@@ -10,4 +21,4 @@ def home_page():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8080)
+    app.run(debug=True, port=8081)

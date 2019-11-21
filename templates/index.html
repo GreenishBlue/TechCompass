@@ -2,12 +2,15 @@
 {% block main %}
 <!-- Filter bar -->
 <nav class="filter-bar mdl-shadow--2dp">
-    <form>
+    <form action="/" method="GET">
         <select>
-            <option value="none">Select Interest</option>
+            <option value="none">Select Job Role</option>
         </select>
-        <select>
-            <option value="none">Select Company</option>
+        <select name="company">
+            <option value="">Select Company</option>
+            {% for company in companies %}
+            <option value="{{ company.lower() }}">{{ company }}</option>
+            {% endfor %}
         </select>
         <select>
             <option value="none">Select Location</option>
@@ -28,8 +31,7 @@
         <li>
             <div class="mdl-card mdl-shadow--2dp">
                 <div style=" overflow: hidden; border-top-left-radius: 16px; border-top-right-radius: 16px;">
-                    <div style="height: 200px; width: 330px; background-color: #333; background-image: url({{ result.photo_url }});">
-                    </div>
+                    <div style="height: 200px; width: 330px; background-color: #333; background-image: url({{ buddy.photo_url }}); background-size: cover;"></div>
                 </div>  
 
                 <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored"

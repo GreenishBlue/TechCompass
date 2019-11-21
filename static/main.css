@@ -27,7 +27,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0px 12px;
 }
@@ -56,6 +56,7 @@ body {
 
 .buddies li {
     float: left;
+    margin-right: 16px;
 }
 
 .buddies .mdl-card {

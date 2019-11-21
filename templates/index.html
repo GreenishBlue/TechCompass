@@ -22,6 +22,9 @@
     <br>
     <ul class="buddies">
         {% for result in results %}
+        {% set buddy = result[0] %}
+        {% set programme = result[1] %}
+        {% set company = result[2] %}
         <li>
             <div class="mdl-card mdl-shadow--2dp">
                 <div style=" overflow: hidden; border-top-left-radius: 16px; border-top-right-radius: 16px;">
@@ -35,22 +38,26 @@
                 </button>
 
                 <div class="mdl-card__title" style="padding-bottom: 0;">
-                    <h2 class="mdl-card__title-text">{{ result.name }} @ {{ result.company_name }}</h2>
+                    <h2 class="mdl-card__title-text">{{ buddy.name }} @ {{ company.company_name }}</h2>
                 </div>
                 <div class="mdl-card__supporting-text">
-                    {{ result.description }} - {{ result.programme_description }}
+                    {{ buddy.description }} - {{ programme.description }}
                     <br><br>
 
                     <span class="mdl-chip">
-                        <span class="mdl-chip__text">{{ result.company_name }}</span>
+                        <span class="mdl-chip__text">{{ company.company_name }}</span>
                     </span>
 
                     <span class="mdl-chip">
-                        <span class="mdl-chip__text">{{ result.location }}</span>
+                        <span class="mdl-chip__text">{{ programme.location }}</span>
                     </span>
 
                     <span class="mdl-chip">
-                        <span class="mdl-chip__text">{{ result.role }}</span>
+                        <span class="mdl-chip__text">{{ programme.role }}</span>
+                    </span>
+
+                    <span class="mdl-chip">
+                        <span class="mdl-chip__text">{{ programme.title }}</span>
                     </span>
                 </div>
                 <div class="mdl-card__menu">

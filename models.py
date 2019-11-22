@@ -1,6 +1,4 @@
 # Author: Cameron Brown
-# Date: 14/03/2019
-# Purpose: Represents the database models.
 
 import os, sys
 import enum

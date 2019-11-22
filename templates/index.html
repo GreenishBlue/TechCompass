@@ -8,8 +8,8 @@
         </select>
         <select name="company">
             <option value="">Select Company</option>
-            {% for company in companies %}
-            <option value="{{ company.lower() }}">{{ company }}</option>
+            {% for c in companies %}
+            <option value="{{ c.lower() }}" {% if company == c.lower() %}selected="selected"{% endif %}>{{ c }}</option>
             {% endfor %}
         </select>
         <select>

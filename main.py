@@ -26,16 +26,16 @@ def results():
 
     company_query = request.args.get('company')
     if not company_query:
-        results = (session.query(Buddy, ApprenticeshipProgramme, Company)
-              .filter(Buddy.apprenticeship == ApprenticeshipProgramme.id)
-              .filter(ApprenticeshipProgramme.company == Company.id)
-              .all())
+        results = session.query(Buddy, ApprenticeshipProgramme, Company) \
+              .filter(Buddy.apprenticeship == ApprenticeshipProgramme.id) \
+              .filter(ApprenticeshipProgramme.company == Company.id) \
+              .all()
     else:
-        results = (session.query(Buddy, ApprenticeshipProgramme, Company)
-              .filter(Buddy.apprenticeship == ApprenticeshipProgramme.id)
-              .filter(ApprenticeshipProgramme.company == Company.id)
-              .filter(Company.company_name.like("%" + company_query + "%"))
-              .all())
+        results = session.query(Buddy, ApprenticeshipProgramme, Company) \
+              .filter(Buddy.apprenticeship == ApprenticeshipProgramme.id) \
+              .filter(ApprenticeshipProgramme.company == Company.id) \
+              .filter(Company.company_name.like("%" + company_query + "%")) \
+              .all()
 
     return render_template('index.html', results=results, company=company_query, 
         companies=companies)
